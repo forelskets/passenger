@@ -1,0 +1,224 @@
+@media(max-width:1276px){
+    .payments .first.d-flex{
+        flex-direction: column;
+
+    }
+    .payments .first.d-flex .d-flex{
+        width: 100%;
+        justify-content: space-between;
+   
+       }
+
+}
+@media(max-width:1199px){
+    img.value-text-jo {
+        width: 100%!important;
+        position: relative;
+        /* right: -63px; */
+    }
+    img.slide-top {
+        width: 75%!important;
+        margin-left: 39px!important;
+    }
+    .first-div-item.item-count {
+        flex-wrap: wrap;
+    }
+    .text_wrapper_w.payments.ship_season_tickets .first.d-flex{
+    flex-direction: row;
+
+}
+
+}
+@media(max-width:991px){
+    img.value-text-jo {
+        width: 100%!important;
+        position: unset!important; 
+        right: -63px;
+    }
+    .wrapper.footers img {
+        width: 100%;
+    }
+    .wrapper-tcxt{
+        margin-bottom: 25px;
+
+    }
+        .banner-section{
+        margin-top: 0px;
+
+    }
+    .press {
+        margin-top: 0!important;
+    }
+    img.slide-top {
+        width: 75%!important;
+        margin-left: 90px!important;
+    }
+    .item_team_two:hover {
+    background: transparent;
+}
+    
+
+}
+@media(max-width:768px){
+
+.banner-section {
+    padding: 37px 0;
+    height: 675px;
+
+
+}
+.text_wrapper_w.payments.ship_season_tickets .first.d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.simple-platform-section img {
+    width: 100%!important;
+}
+.item-alert img {
+    width: 264px;
+}
+
+
+h2.line{
+    font-size: 30px;
+
+}
+.text-line img {
+    width: 100%!important;
+}
+.code_text {
+    display: flex;
+    flex-wrap: wrap;
+}
+.text-line {
+    text-align: center;
+    padding: 9px 0 34px 0;
+}
+.time{
+    margin: 9px 8px;
+    width: 100%;
+}
+.hub-section {
+    padding: 85px 0 63px;
+}
+p.one-item {
+    padding: 0;
+}
+.col-md-6.top-down {
+    margin-top: 69px;
+}
+ul.auto-switch.mt-4.d-xl-block li {
+    margin-bottom: 13px;
+}
+.wrapper.ticktes img {
+    width: unset!important;
+}
+.footer {
+    padding: 34px 9px;
+}
+.item_team_two:hover {
+    background: transparent;
+}
+.line-text-d img {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 12px;
+}
+}
+@media(max-width:480px){
+    .banner-section {
+        padding: 37px 0;
+        height: 618px;
+    }
+      img.slide-top {
+        width: 100%!important;
+        margin-left: 0px!important;
+    }
+    .d-flex.buttons.text-center.middlebuttons{
+        margin-bottom: 0;
+
+    }
+    .search-result .scroll_el  .first.d-flex {
+        overflow-x: scroll;
+        width: 423px;
+        padding: 13px 18px 12px;
+        flex-wrap: nowrap;
+    }
+    .search-result .scroll_el {
+        overflow: scroll;
+    }
+    .train_div .text-input-filed label{
+        text-align: left!important;
+
+    }
+    .text_wrapper_w{
+        margin-bottom: 19px;
+
+    }
+    .suffle {
+        transform: (12px);
+        transform: rotate(-90deg);
+        display: flex;
+        width: 45px;
+        position: relative;
+    top: 2px;
+    }
+    .number-input input{
+        height: 57px;
+
+    }
+    .first-div-item{
+        flex-wrap: wrap;
+
+    }
+    .debit_card .col-sm-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+    
+    }
+    .faq-accordian .ant-collapse-header{
+        height: auto;
+        line-height: 24px!important;
+    }
+    .faq-accordian span.anticon.anticon-right.ant-collapse-arrow,
+    .faq-accordian .ant-collapse-item.ant-collapse-item-active span.anticon.anticon-right.ant-collapse-arrow{
+        top: 37px;
+
+    }
+    .line-text_text {
+        margin: 0px 12px;
+    }
+    .gift-icon1{
+        flex-direction: column;
+
+    }
+    .text-line_digitr {
+        padding: 12px 7px 6px;
+    }
+
+    .first-div-item.item-count .first-i {
+        display: unset;
+    }
+    .first-div-item.item-count .number-input {
+        width: 120px;
+        margin-right: 0;
+        max-width: 120px;
+        display: grid;
+
+
+    }
+    .first-div-item.item-count {
+        margin-bottom: 0;
+    }
+    .first-div-item.item-count:first-child .first-i {
+        margin-bottom: 24px;
+        display: block;
+    }
+    .first-div-item.item-count:last-child .first-i {
+        margin-bottom: 30px;
+        display: block;
+    }
+}
+
+
+

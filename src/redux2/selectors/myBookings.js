@@ -1,0 +1,68 @@
+import { createSelector } from 'reselect'
+
+export const getMemoizedMyBookingsData = createSelector(
+  (state) => state.myBookings,
+  (myBookingsState) => {
+    const {
+      tubeBookingsLoader,
+      tubeBookingsSuccess,
+      tubeBookingsList,
+      tubeBookingsPagination,
+      offsetValueActive,
+      offsetValueFuture,
+      offsetValuePast,
+      offsetValueLongDur,
+      offsetValueOneDay,
+      searchValueActive,
+      searchValueFuture,
+      searchValuePast,
+      searchValueTrain,
+      searchValueLongDur,
+      searchValueOneDay,
+      trainBookingsLoader,
+      trainBookingsSuccess,
+      trainBookingsList,
+      trainBookingsPagination,
+      screenTabFirst,
+      screenTabTrain,
+      screenTabTube,
+      bookingDetailsLoader,
+      bookingDetailsSuccess,
+      bookingDetails,
+      cancelBookingLoader,
+      cancelBookingSuccess,
+      cancelBookingDetail,
+    } = myBookingsState
+
+    return {
+      tubeBookingsLoader,
+      tubeBookingsSuccess,
+      tubeBookingsList,
+      tubeBookingsPagination,
+      offsetValueActive,
+      offsetValueFuture,
+      offsetValuePast,
+      searchValueTrain,
+      offsetValueLongDur,
+      offsetValueOneDay,
+      searchValueActive,
+      searchValueFuture,
+      searchValuePast,
+      searchValueLongDur,
+      searchValueOneDay,
+      trainBookingsLoader,
+      trainBookingsSuccess,
+      trainBookingsList,
+      trainBookingsPagination,
+      screenTabFirst,
+      screenTabTrain,
+      screenTabTube,
+      bookingDetailsLoader,
+      bookingDetailsSuccess,
+      bookingDetails,
+      cancelBookingLoader,
+      cancelBookingSuccess,
+      cancelBookingDetail
+    }
+  }
+)
