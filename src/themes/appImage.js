@@ -76,6 +76,9 @@ const images = {
     second_f: require('../images/second_f.png').default,
     mask_1: require('../images/mask_1.jpeg').default,
     mask_2: require('../images/mask_2.jpeg').default,
+    about1: require('../images/about.jpeg').default,
+    about2: require('../images/about1.jpeg').default,
+    contact: require('../images/contact.jpeg').default,
 
 
 

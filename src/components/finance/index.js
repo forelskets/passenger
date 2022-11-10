@@ -105,65 +105,240 @@ const Finance = (props) => {
       <div className="about-text texto">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-2">
-              <div className="fiannce_img" >
+            <div
+              className="col-md-3"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div className="fiannce_img">
                 <img src={images.first_f} />
               </div>
+              <div className="fiannce_img">
+                <img src={images.second_f} className="img-line-f " />
+              </div>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-6">
               <div className="text-wrapper-accordian">
-                <h2 className="line">
-                  {appConstants.financetitlefirst}{" "}
-                  <span className="color-d">
-                    {appConstants.financetitlecolor}
-                  </span>{" "}
-                  {appConstants.financetitlelast}
-                </h2>
+                <h3
+                  className="line"
+                  style={{
+                    fontSize: "30px",
+                    fontWeight: 800,
+                    textAlign: "center",
+
+                    borderRadius: "25px",
+                  }}
+                >
+                  Here’s how season ticket financing works
+                </h3>
                 {/* <div className="text-line">
                                     <img src={images.border1} style={{ width: '400px' }} />
                                 </div> */}
                 <div className="accordion">
-                  <Collapse accordion>
-                    <Panel header={appConstants.financelimitone} key="1">
-                      <p>{text}</p>
-                    </Panel>
-                    <Panel header={appConstants.financelimittwo} key="2">
-                      <p>{text1}</p>
-                    </Panel>
-                    <Panel header={appConstants.financelimitthree} key="3">
-                      <p>{text2}</p>
-                    </Panel>
-                    <Panel header={appConstants.financelimitfour} key="4">
-                      <p>{text3}</p>
-                    </Panel>
-                  </Collapse>
+                  <div className="row" style={{paddingTop:"30px"}}>
+                    <div
+                      className="col-sm-8"
+                      style={{
+                        backgroundColor: "#f0f5ff",
+                        padding: "1rem",
+                        textAlign: "center",
+                        marginTop: "1rem",
+
+                        borderRadius: "25px",
+                        fontSize: "20px",
+                        fontWeight: 600,
+                        lineHeight: 1,
+                      }}
+                    >
+                      Choose your season ticket on The Passenger Hub
+                    </div>
+                    <div className="col-sm-4"></div>
+                  </div>
+                  <div className="row" style={{paddingTop:"30px"}}>
+                    <div className="col-sm-4"></div>
+                    <div
+                      className="col-sm-8"
+                      style={{
+                        backgroundColor: "#f0f5ff",
+                        padding: "1rem",
+                        textAlign: "center",
+                        marginTop: "1rem",
+
+                        borderRadius: "25px",
+                        fontSize: "20px",
+                        fontWeight: 600,
+                        lineHeight: 1,
+                      }}
+                    >
+                      Apply to split your payments over 2-11 months
+                    </div>
+                  </div>
+                  <div className="row"style={{paddingTop:"30px"}}>
+                    <div
+                      className="col-sm-8"
+                      style={{
+                        backgroundColor: "#f0f5ff",
+                        padding: "1rem",
+                        textAlign: "center",
+                        marginTop: "1rem",
+
+                        borderRadius: "25px",
+                        fontSize: "20px",
+                        fontWeight: 600,
+                        lineHeight: 1,
+                      }}
+                    >
+                      Receive a fast yes/no decision
+                    </div>
+                    <div className="col-sm-4" style={{paddingTop:"30px"}}></div>
+                  </div>
+                  <div className="row" style={{paddingTop:"30px"}}>
+                    <div className="col-sm-4" style={{paddingTop:"30px"}}></div>
+                    <div
+                      className="col-sm-8"
+                      style={{
+                        backgroundColor: "#f0f5ff",
+                        padding: "1rem",
+                        textAlign: "center",
+                        marginTop: "1rem",
+
+                        borderRadius: "25px",
+                        fontSize: "20px",
+                        fontWeight: 600,
+                        lineHeight: 1,
+                      }}
+                    >
+                      Pay for your first month to get travelling
+                    </div>
+                  </div>
+                  <div className="row" style={{paddingTop:"30px"}}>
+                    <div
+                      className="col-sm-8"
+                      style={{
+                        backgroundColor: "#f0f5ff",
+                        padding: "1rem",
+                        textAlign: "center",
+                        marginTop: "1rem",
+
+                        borderRadius: "25px",
+                        fontSize: "20px",
+                        fontWeight: 600,
+                        lineHeight: 1,
+                      }}
+                    >
+                      Pay your remaining balance on a monthly basis
+                    </div>
+                    <div className="col-sm-4"></div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="col-md-2">
+            <div
+              className="col-md-3"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               <div className="fiannce_img text_2">
                 <img src={images.second_f} />
               </div>
             </div>
           </div>
+          <p
+            style={{ padding: "1rem", fontWeight: 800, wordSpacing: "6px" , textAlign:"center" }}
+          >
+            Financing is arranged by The Passenger Hub and provided by Funding
+            Falcon. It will appear as Funding Falcon on your bank statement
+          </p>
         </div>
       </div>
-
-      <div className="works">
-        <div class="line-text_text">
-          <h3 className="mt_bottomn_f" style={{ fontWeight: "700" }}>
-            {appConstants.financeworks}
+      <div className="about-text texto">
+        <div className="container-fluid">
+          <h3
+            style={{ textAlign: "center", fontWeight: 800, wordSpacing: "6px" }}
+          >
+            And here’s what that looks like for a typical London-Reading
+            commuter
           </h3>
-          <h2>{appConstants.financelist}</h2>
-          <h2>{appConstants.financelisttwo}</h2>
-          <h2>{appConstants.financelistthree}</h2>
-          <button className="button text tet-ios_one">
-            {appConstants.letstarted}
-          </button>
+          <div className="row" style={{ marginLeft: "7rem" }}>
+            <div
+              style={{
+                width: "40%",
+                height: "250px",
+                border: "2px solid black",
+                borderRadius: "25px",
+                backgroundColor: "#f0f5ff",
+              }}
+            >
+              <h3 style={{ padding: "1rem", textAlign: "center",fontWeight: "800" }}>
+                Buying your train ticket directly
+              </h3>
+              <p
+                style={{
+                  padding: "1rem",
+                  paddingTop: 0,
+                  textAlign: "center",
+                  fontWeight: 700,
+                }}
+              >
+                Annual cost: £5520 paid upfront
+              </p>
+            </div>
+            <div
+              style={{
+                width: "40%",
+                height: "250px",
+                border: "2px solid black",
+                borderRadius: "25px",
+                backgroundColor: "#f0f5ff",
+                marginLeft: "5rem",
+              }}
+            >
+              <h3 style={{ padding: "1rem", textAlign: "center" , fontWeight: "800" }}>
+                Buying your train ticket from The Passenger Hub
+              </h3>
+              <p
+                style={{
+                  padding: "1rem",
+                  paddingTop: 0,
+                  textAlign: "center",
+                  fontWeight: 700,
+                }}
+              >
+                Deposit of £505 Then 12 payments of £378
+              </p>
+              <h3
+                style={{
+                  padding: "1rem",
+                  textAlign: "center",
+                  color: "#7bd0d3",
+                  fontWeight: 800,
+                }}
+              >
+                TOTAL SAVINGS: £1193
+              </h3>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              margin: "2rem",
+            }}
+          >
+             <span className="button same1">Join Now</span>
+          </div>
         </div>
       </div>
-      <img src={images.finance} className="img-line-f " />
       <FooterMain />
     </div>
   );

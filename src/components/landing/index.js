@@ -95,10 +95,16 @@ const Landing = (props) => {
       <HeaderMain handleClick={handlewClick} />
       <div className="banner-section">
         <div className="container-fluid">
+        <h2 className="line">
+            Train travel made 
+            <span className="color-d"> cheaper</span> 
+          
+          </h2>
           <div className="row">
-            <div className="col-md-3">
-              <div className="line-text-d">
-                {/* onClick={()=>(navigate('/purchaseOystersearch'))} */}
+            
+            <div className="col-md-6">
+              {/* <div className="line-text-d">
+               
                 <img
                   alt=""
                   src={images.oyster}
@@ -111,9 +117,12 @@ const Landing = (props) => {
                   onClick={() => (navigate('/newBookings'))}
                   style={{ width: '250px', cursor: 'pointer' }}
                 />
-              </div>
+              </div> */}
+              <h4 style={{paddingLeft: "150px" , paddingTop: "40px"}}>It’s time to stop overpaying for 
+your commute.</h4>
+<h4 style={{paddingLeft: "150px" , paddingTop: "40px"}}>Split the cost of your train ticket over 12 months, and <span className="color-d">save up to 20%</span></h4>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-6">
               <div className="banner_text">
                 <img
                   alt=""
@@ -124,100 +133,171 @@ const Landing = (props) => {
               </div>
             </div>
           </div>
+          
         </div>
+        
       </div>
-
-      <div className="simple-platform-section">
-        <div className="container">
-          <h2 className="line">One Simple <span className="color-d">Platform </span>To Do It All</h2>
-          <div className="text-line">
-            {/* <img
-              alt=""
-              src={images.border1}
-              style={{ width: '400px' }}
-            /> */}
-          </div>
+      <div className="home-banner-section1">
+        <div className="container-fluid">
           <div className="row">
-            <div className="col-md-6">
-              <img
-                alt=""
-                src={images.mobile}
-                style={{ width: '105%' }}
-              />
-
-            </div>
-            <div className="col-md-6">
-              <div className="line-text_text">
-                <h2>Online  booking  and management</h2>
-                <h2>Real-time tracking </h2>
-                <h2>Analytics dashboard</h2>
-                <button type="submit" className="button text text_simple des12_t" onClick={() => navigate('/register')}>Let's get started</button>
+            <div className="col-md-3"></div>
+            <div className="col-md-3">
+              <div className="line-text-d">
+                {/* onClick={()=>(navigate('/purchaseOystersearch'))} */}
+                <img
+                  alt=""
+                  src={images.oyster}
+                  onClick={() =>
+                    navigate("/purchaseoyster", {
+                      state: { key: "landingPage" },
+                    })
+                  }
+                  style={{ width: "250px", cursor: "pointer" }}
+                />
               </div>
-
-
             </div>
+            <div className="col-md-3">
+              <div className="line-text-d">
+                <img
+                  alt=""
+                  src={images.travel}
+                  onClick={() => navigate("/newBookings")}
+                  style={{ width: "250px", cursor: "pointer" }}
+                />
+                {/* <div className="banner_text">
+                <img
+                  alt=""
+                  src={imageBanner}
+                  className={imageBannerClass}
+                  style={{ width: "700px" }}
+                />
+              </div> */}
+              </div>
+            </div>
+            <div className="col-md-3"></div>
           </div>
         </div>
       </div>
+
+    
       <div className="logistics text-center" style={{height : "450px"}}>
         <div className="container">
-          <h2 className="line"></h2>
+          <h2 className="line" style={{paddingTop: "20px"}}>
+            Carbon-friendly Commuting
+          </h2>
           <div className="text-line small-text">
-          
+          We’re on a mission to change the way people travel. We want to make travelling 
+by train cheaper and greener, doing our part in the global journey to reach net 
+zero emissions. 
+
           </div>
-          {/* <p className="one-item">Stay in control of your logistics with full visibility, competitive instant prices and trusted carriers.
-            Plus the financing to grow your business. </p> */}
-          {/* <div className="row">
+          <h4 className="line" style={{paddingTop: "20px"}}>
+         <b> Why choose train travel?</b>
+          </h4>
+   <br/>
+    
+          <div className="row">
             <div className="col-md-4">
-              <img
-                alt=""
-                src={images.box1}
-                style={{ width: '100px' }}
-              />
+            <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              
+            }}
+          >
+             <span className="button same1">Reduce CO2</span>
+          </div>
               <div className="shopp-text">
-                <h4>Real-time tracking and support</h4>
-                <p>A simple online platform to manage
-
-                  shipments with a dedication support team.</p>
+                {/* <h4>Real-time tracking and support</h4> */}
+                <p>We can only meet 
+climate targets if we 
+reduce the 60% of CO2 
+road emissions that cars 
+are responsible for. 
+</p>
               </div>
             </div>
             <div className="col-md-4">
-              <img
-                alt=""
-                src={images.global1}
-                style={{ width: '100px' }}
-              />
+            <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              
+            }}
+          >
+             <span className="button same1">Get To work Happier</span>
+          </div>
               <div className="shopp-text">
-                <h4>Trusted global carriers</h4>
-                <p>We partner directly with the best
-
-                  global carriers.</p>
+                {/* <h4>Trusted global carriers</h4> */}
+                <p>Say goodbye to rush 
+hour traffic, higher fuel 
+consumption and 
+unpredictable journey 
+times.</p>
               </div>
             </div>
             <div className="col-md-4">
-              <img
-                alt=""
-                src={images.cashpay1}
-                style={{ width: '100px' }}
-              />
-
+            <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              
+            }}
+          >
+             <span className="button same1">No Parking</span>
+          </div>
               <div className="shopp-text">
-                <h4>Competitive prices</h4>
-                <p>Get fair and transparent priceswith
-
-                  our online freight pricing tool.</p>
+                {/* <h4>Competitive prices</h4> */}
+                <p>Hop on, hop off, with no 
+need to search for 
+expensive city-centre 
+parking options or 
+negotiate busy traffic.</p>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 
 
+   
       <div className="hub-section">
         <div className="container happy_sec" >
-          <div className="row" style={{height:"400px"}}>
+          <div className="row">
 
-         
+            <div className="col-md-4">
+              <div className="item-alert">
+
+                <img
+                  alt=""
+                  src={imageSrc}
+                  style={{ width: '283px' }}
+                />
+              </div>
+            </div>
+            <div className="col-md-8 passenger">
+              <h3 class="top-left">Still to come...</h3>
+              {/* <h4>Simple . Secure . Share</h4> */}
+              <p className="one-time">Book your journey end-to-end using The Passenger Hub, including reserving bikes, e-scooters and more.</p>
+
+              <p className="one-time">Subscribe now to be one of the first to try 
+our new micro-mobility services, and be 
+kept up-to-date on the launch.</p>
+
+<div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              
+            }}
+          >
+             <span className="button same1">Join Now</span>
+          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -226,17 +306,17 @@ const Landing = (props) => {
         <div className="container special_margin" style={{ marginRight: '0px!important' }}>
           <div className="row">
             <div className="col-md-6 top-down">
-              <h3>Want Happy Employees?</h3>
-              <h4>Bring The Passenger Hub to your organisation</h4>
-              <p>Foster a culture of carpooling within your
-              company and reduce CO2, help your employees network better,
-              get to work happier, and find parking without any stress
-                with our Carpool for Companies programs.</p>
-              <ul class="auto-switch mt-4 d-xl-block">
-                <li className={resultIndex == 0 ? "button text first active" : "button text first"}>Reduce CO2</li>
-                <li className={resultIndex == 1 ? "button text active long-b" : "button text long-b"}>Get to Work Happier</li>
-                <li className={resultIndex == 2 ? "button text last active" : "button text last"}>Save Parking Space</li>
-              </ul>
+              <h3>The ultimate getting-to-work perk</h3>
+              <div className="text-line small-text" style={{textAlign: "left"}}>
+              Attract your top talent back to the office by offering discounted season tickets, bought through us and subsidised by you.
+              
+
+          </div>
+          <div className="text-line small-text" style={{textAlign: "left"}}>
+          Or if you’re self-employed, get a cheaper season ticket alongside a monthly receipt for your expenses.
+
+          </div>
+                
             </div>
             <div className="col-md-6 special_padding">
               {

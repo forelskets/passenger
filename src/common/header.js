@@ -237,7 +237,7 @@ const HeaderMain = (props) => {
                       <Menu.Item key="/purchaseoyster">
                         <Link to="/purchaseoyster">{appConstants.purchaseOC}</Link></Menu.Item>
 
-                        <Menu.Item key="/seasontickets"><Link to="/seasontickets">{appConstants.requestSeasonTkt}</Link></Menu.Item>
+                        {/* <Menu.Item key="/seasontickets"><Link to="/seasontickets">{appConstants.requestSeasonTkt}</Link></Menu.Item> */}
 
                         <Menu.Item key="/landing" onClick={() => {
                           localStorage.clear()

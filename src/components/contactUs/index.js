@@ -140,15 +140,29 @@ const ContactUS = (props) => {
             </div>
           </div>
           <div className="press password_small">
-            <div className="container small-xs-container">
+            <div className="container medium-xs-container">
               <h2 className="line">
                 {/* {appConstants.contactfirst}{" "}
                 <span className="color-d">{appConstants.contactsecond}</span> */}
               </h2>
-              {/* <div className="text-line">
-                <img src={images.border1} style={{ width: '400px' }} />
-              </div> */}
-              <Formik
+             <p>Want to know more about what we’re doing here at The Passenger Hub or
+have a ticket-related question that isn’t answered on our website? We’d
+love to hear your questions, comments or feedback - just fill in the form
+below and we’ll get back to you shortly</p>
+             
+            </div>
+          </div>
+          
+         
+
+          <div className="row">
+            <div className="col-sm-6 container small-xs-container">
+            <img src={images.contact} style={{ padding: '20px', width : "100%" }} />
+
+            </div>
+            
+            <div className="col-sm-6  container small-xs-container ">
+            <Formik
                 enableReinitialize
                 initialValues={initialState}
                 validationSchema={validationSchema}
@@ -166,6 +180,61 @@ const ContactUS = (props) => {
                 }) => (
                   <form onSubmit={handleSubmit}>
                     <div className="text-input-filed">
+                    <div className="form-group">
+                      <div className="row">
+                      <div className="col-sm-6">
+                        <label>First Name</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="First Name"
+                          Value={values.email}
+                          name="email"
+                          onKeyDown={(e) => {
+                            if (e.key === " ") {
+                              e.preventDefault();
+                            }
+                          }}
+                          onSelect={(e) => {
+                            if (e.target.value === "") {
+                              handleInputChange(setFieldValue, e, "email");
+                            }
+                          }}
+                          onChange={(e) =>
+                            handleInputChange(setFieldValue, e, "email")
+                          }
+                        />
+                        {errors.email ? (
+                          <div className="color-error">{errors.email}</div>
+                        ) : null}
+                      </div>
+                      <div className="col-sm-6">
+                        <label>Last Name</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Last Name"
+                          Value={values.email}
+                          name="email"
+                          onKeyDown={(e) => {
+                            if (e.key === " ") {
+                              e.preventDefault();
+                            }
+                          }}
+                          onSelect={(e) => {
+                            if (e.target.value === "") {
+                              handleInputChange(setFieldValue, e, "email");
+                            }
+                          }}
+                          onChange={(e) =>
+                            handleInputChange(setFieldValue, e, "email")
+                          }
+                        />
+                        {errors.email ? (
+                          <div className="color-error">{errors.email}</div>
+                        ) : null}
+                      </div></div>
+                      </div>
                       <div className="form-group phone_number">
                         <label>{appConstants.phonenumber}</label>
                         <input
@@ -281,6 +350,7 @@ const ContactUS = (props) => {
                 )}
               </Formik>
             </div>
+
           </div>
         </>
       ) : (

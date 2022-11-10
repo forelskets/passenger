@@ -48,13 +48,16 @@ const Press = (props) => {
                     </div> */}
           <div className="">
             <div class="line-text_text">
-              <p>
-                Lorem ipsum, or lipsum as it is sometimes known, is dummy text
-                used in laying out print, graphic or web designs. The passage is
-                attributed to an unknown typesetter in the 15th century who is
-                thought to have scrambled parts of Cicero's De Finibus Bonorum
-                et Malorum for use in a type specimen book. It usually begins
-                with:
+              <h1 style={{ fontWeight: 800, textAlign: "center" }}>Press</h1>
+              <h3 style={{ fontWeight: 600, textAlign: "center" }}>
+                News about The Passenger Hub is coming soon.
+              </h3>
+              <p style={{ textAlign: "center" }}>
+                But since you’re here, we’d like to recommend this article about
+                the importance of public transport in the fight against climate
+                change, and also this inspirational look at how Jakarta in
+                Indonesia has created a more sustainable and socially-mobile
+                transport infrastructure
               </p>
             </div>
           </div>

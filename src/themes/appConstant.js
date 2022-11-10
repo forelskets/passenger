@@ -5,7 +5,7 @@ export const serverUrl = {
   // http://192.168.3.174:5001/
   // http://192.168.3.173:5002/
   // http://18.135.41.237:3000/ new client url
-  url: "http://localhost:5000/",
+  url: "http://13.41.197.155:5000/",
 };
 
 export const appConstants = {
@@ -30,9 +30,9 @@ export const appConstants = {
     "No set up costs or ongoing fees, you only pay for the facility when you use it",
   financelimitfour: "The facility is unsecured",
   financeworks: "How our financing works:",
-  financelist: "Online booking and management",
-  financelisttwo: "Real-time tracking",
-  financelistthree: "Analytics dashboard",
+  financelist: "Are you looking for a new career challenge?",
+  financelisttwo: "Do you believe in the power of data?",
+  financelistthree: "Are you ready to join a company intent on shaking things up ?",
   letstarted: "let's get started",
   WhoWeAretitleone: "Who",
   WhoWeAretitletwo: "We",
@@ -53,16 +53,16 @@ export const appConstants = {
     "Today, The Passenger Hub operates in many cities million of monthly users from all 69 cities connect with many travel partners to get to any destination across United Kingdom.",
   team: "Team",
   Careers: "Careers",
-  Roles: "Roles",
+  Roles: "Careers at The Passenger Hub",
   titlerolesone: "What",
   titlerolestwo: "We’re",
-  titlerolethree: "Working On",
+  titlerolethree: "Current roles",
   technology: "Technology",
   operation: "Operations",
   bussiness: "Bussiness Development",
   softdata: "(Software Engineering, Data Science Product & UX)",
-  obseed: "Always Customer Obsessed",
-  thinkbig: "Think Big",
+  responsible: "Responsible",
+  thinkbig: "Thinking Big",
   auth: "Authentic & Inclusive",
   debate: "Debate & Commit",
   together: "Get It Done, Together",
@@ -120,4 +120,8 @@ export const appConstants = {
   Bookingdate: "Booking Date",
   TicketPrice: "Ticket Price",
   seatnumber: "Seat Number",
+  oriented: "Customer Oriented",
+  inclusive: "Inclusive",
+  visionary: "Visionary",
+  collaborative:"Collaborative",
 };

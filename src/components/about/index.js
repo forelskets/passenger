@@ -55,16 +55,6 @@ const AboutUs = (props) => {
       website: "astminute.com",
       name1: "Morgon Stanley",
     },
-    {
-      profile: <img src={images.img3} />,
-      linkdin: <img src={images.linkdin} />,
-      name: "Fraser Robinson",
-      degisation: "CEO and Co-Founder",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      text1: "Uber",
-      website: "astminute.com",
-      name1: "Morgon Stanley",
-    },
   ];
   const aboutsecond = [
     {
@@ -162,37 +152,179 @@ const AboutUs = (props) => {
       <div className="about-text">
         <div className="container">
           <h2 className="line">
-            {appConstants.WhoWeAretitleone}{" "}
-            <span className="color-d"> {appConstants.WhoWeAretitletwo}</span>{" "}
-            {appConstants.WhoWeAretitlethree}
+            We’re here to
+            <span className="color-d"> disrupt</span> your commute.  <br/>In a good
+            way.
           </h2>
-          {/* <div className="text-line">
-                        <img src={images.border1} style={{ width: '400px' }} />
-                    </div> */}
-          <p className="text-about">{appConstants.aboutdata}</p>
         </div>
       </div>
 
-      <div className="about-text historyt">
+      <div className="about-text ">
         <div className="container">
-          <h2 className="line">{appConstants.history}</h2>
-          {/* <div className="text-line">
-                        <img src={images.border1} style={{ width: '400px' }} />
-                    </div> */}
+          <div className="row text-black">
+          <div className="col-sm-4">
+              <h1
+                style={{
+                  textAlign: "center",
+                  fontSize: "40px",
+                  fontWeight: 800,
+                  color: "#00bb9c",
+                }}
+              >
+                21
+              </h1>
+
+              <p
+                className="text-about"
+                style={{
+                  paddingTop: "1rem",
+                  lineHeight: 1,
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  textAlign: "center",
+                }}
+              >
+                The number of train trips
+the average person
+makes each year
+              </p>
+            </div>
+            <div className="col-sm-4">
+              <h1
+                style={{
+                  textAlign: "center",
+                  fontSize: "40px",
+                  fontWeight: 800,
+                  color: "#00bb9c",
+                }}
+              >
+                580
+              </h1>
+
+              <p
+                className="text-about"
+                style={{
+                  paddingTop: "1rem",
+                  lineHeight: 1,
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  textAlign: "center",
+                }}
+              >
+                The number of car trips the average person makes each year.
+              </p>
+            </div>
+            <div className="col-sm-4">
+              <h1
+                style={{
+                  textAlign: "center",
+                  fontSize: "40px",
+                  fontWeight: 800,
+                  color: "#00bb9c",
+                }}
+              >
+                5 million
+              </h1>
+
+              <p
+                className="text-about"
+                style={{
+                  paddingTop: "1rem",
+                  lineHeight: 1,
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  textAlign: "center",
+                }}
+              >
+                The number of people who would swap car for train if the journey
+                was more seamless.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="about-text ">
+        <div className="container">
           <div className="row text-black">
             <div className="col-sm-6">
-              <h3>{appConstants.historytext}</h3>
-              <img src={images.line_t} style={{ width: "28%" }} />
-
-              <p className="text-about">{appConstants.textabout}</p>
+              <p
+                className="text-about"
+                style={{
+                  lineHeight: 1,
+                  fontSize: "20px",
+                  fontWeight: 600,
+                }}
+              >
+                The idea behind The Journey Hub came when co-founders Oliver and
+                Richard found themselves spending hours in the car, thanks to
+                the talents of the children from both families. With Hannah and
+                Jaedon excelling at tennis and football respectively, the dads
+                each found themselves travelling to training grounds four days a
+                week, as well as matches at weekends.
+              </p>
+              <p
+                className="text-about"
+                style={{
+                  lineHeight: 1,
+                  fontSize: "20px",
+                  fontWeight: 600,
+                }}
+              >
+                After so much time in the car, it because obvious that train
+                travel would be preferable, allowing the children to get on with
+                things like homework, and the adults to ditch their cars.
+                Unfortunately, there simply wasn’t adequate public transport to
+                complete the journey from beginning to end - and so The
+                Passenger Hub was born.
+              </p>
             </div>
             <div className="col-sm-6">
-              <h3>{appConstants.early}</h3>
-              <img src={images.line_t} style={{ width: "28%" }} />
+                        <img src={images.about1} style={{ paddingTop: '60px' , width: '400px' }} />
+            </div>
+          </div>
+        </div>
+      </div>
 
-              <p className="text-about">{appConstants.earlytext}</p>
-              <p className="text-about">{appConstants.earlytexttwo}</p>
-              <p className="text-about">{appConstants.earlytextthird}</p>
+      <div className="about-text ">
+        <div className="container">
+          <div className="row text-black">
+            <div className="col-sm-6">
+            <img src={images.about2} style={{ paddingTop: '20px' , width: '400px' }} />
+
+            </div>
+            <div className="col-sm-6">
+              <p
+                className="text-about"
+                style={{
+                  lineHeight: 1,
+                  fontSize: "20px",
+                  fontWeight: 600,
+                }}
+              >
+                While train travel is at its core, the secret ingredient is the
+                addition of micromobility - shared use vehicles, designed for
+                short trips and low speeds. The goal is for commutes, leisure
+                journeys and, of course, training runs, to become cheaper,
+                greener and more seamless.
+              </p>
+              <p
+                className="text-about"
+                style={{
+                  lineHeight: 1,
+                  fontSize: "20px",
+                  fontWeight: 600,
+                }}
+              >
+                Today, that means making train travel more affordable, by
+                offering significant savings and monthly payments for train
+                tickets. But this is just the beginning. With the addition of
+                “first and final mile” solutions, including e-bikes, e-scooters
+                and more, public{" "}
+                <span style={{ fontWeight: 700 }}>
+                  transport will become the obvious solution for any journey.
+                </span>
+              </p>
             </div>
           </div>
         </div>
@@ -200,7 +332,7 @@ const AboutUs = (props) => {
 
       <div className="about-text team">
         <div className="container">
-          <h2 className="line">{appConstants.team}</h2>
+          <h2 className="line">Meet the team</h2>
           {/* <div className="text-line">
                         <img src={images.border1} style={{ width: '400px' }} />
                     </div> */}
@@ -209,7 +341,7 @@ const AboutUs = (props) => {
           <div className="row first-text">
             {about.map((item) => {
               return (
-                <div className="col-md-3">
+                <div className="col-md-4">
                   <div className="team-text text-center">
                     <div className="team-img">
                       {item.profile}
@@ -220,82 +352,12 @@ const AboutUs = (props) => {
                     <hr></hr>
                     <p>{item.desc}</p>
                     <hr></hr>
-                    <h3 className="uber"> {item.text1} </h3>
-                    <h3 className="color-new"> {item.website} </h3>
-                    <h5 className="last-line-1"> {item.name1} </h5>
                   </div>
                 </div>
               );
             })}
           </div>
         </div>
-        <hr className="third-one1"></hr>
-        <div className="second-text">
-          <div className="container-fluid">
-            <div className="row">
-              {aboutsecond.map((item) => {
-                return (
-                  <div className="col-md-3">
-                    <div className="team-text text-center">
-                      <div className="team-img">
-                        {item.profile}
-                        <span className="Linkdin"> {item.linkdin}</span>
-                      </div>
-                      <h3>{item.name}</h3>
-                      <h2>{item.degisation}</h2>
-                      <hr></hr>
-                      <p>{item.desc}</p>
-                      <hr></hr>
-                      <h3 className="uber"> {item.text1} </h3>
-                      <h3 className="color-new"> {item.website} </h3>
-                      <h5 className="last-line-1"> {item.name1} </h5>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-        <hr className="third-one1"></hr>
-        <div className="third-text">
-          <div className="container-fluid">
-            <div className="row">
-              {aboutthird.map((item) => {
-                return (
-                  <div className="col-md-3">
-                    <div className="team-text text-center">
-                      <div className="team-img">
-                        {item.profile}
-                        <span className="Linkdin"> {item.linkdin}</span>
-                      </div>
-                      <h3>{item.name}</h3>
-                      <h2>{item.degisation}</h2>
-                      <hr></hr>
-                      <p>{item.desc}</p>
-                      <hr></hr>
-                      <h3 className="uber"> {item.text1} </h3>
-                      <h3 className="color-new"> {item.website} </h3>
-                      <h5 className="last-line-1"> {item.name1} </h5>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="about-text investors">
-        <div className="container">
-          <h2 className="line">Investors</h2>
-          {/* <div className="text-line">
-                        <img src={images.border1} style={{ width: '400px' }} />
-                    </div> */}
-        </div>
-        <p>
-          We have many investors from many countries. They trust us because we
-          love what we do.
-        </p>
       </div>
 
       <FooterMain />
