@@ -4,6 +4,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import images from "../../../themes/appImage";
 import { Collapse, Select, DatePicker, Space } from "antd";
+import { CameraOutlined } from "@ant-design/icons";
 import { Radio, InputNumber, TimePicker } from "antd";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
@@ -243,12 +244,11 @@ const EditProfile = (props) => {
                     <img src={images.border1} style={{ width: '400px' }} />
                   </div> */}
                 <div class="team-img">
-                  <img
-                    alt=""
-                    style={{ cursor: "pointer" }}
-                    src={userImage}
-                    onClick={imageFocus}
-                  />
+                  <img alt="" style={{ cursor: "pointer" }} src={userImage} />
+                  <div className="edit-img" onClick={imageFocus}>
+                    <CameraOutlined />
+                  </div>
+
                   <input
                     hidden
                     ref={imgInput}

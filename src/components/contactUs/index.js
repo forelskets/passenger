@@ -18,25 +18,25 @@ import MobileSidebar from "../../common/mobilesidebar";
 import HeaderMain from "../../common/header";
 import FooterMain from "../../common/footer";
 import { appConstants } from "../../themes/appConstant";
-
+ 
 const { Option } = Select;
-
+ 
 const initialState = {
   phoneNumber: "",
   email: "",
   message: "",
 };
-
+ 
 const ContactUS = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+ 
   const [value, setValue] = React.useState(1);
-
+ 
   const authenticationData = useSelector(getMemoizedAuthenticationData);
   const { drawerState, contactUsFormSuccess, contactUsFormLoader } =
     authenticationData;
-
+ 
   const handlewClick = () => {
     let action = drawerState ? false : true;
     dispatch(drawerAction(action, "drawerState"));
@@ -44,12 +44,12 @@ const ContactUS = (props) => {
   useEffect(() => {
     document.title = "The PassengerHub";
     window.scrollTo(0, 0);
-
+ 
     return () => {
       dispatch(updateAuthenticationState(false, "contactUsFormSuccess"));
     };
   }, []);
-
+ 
   const handleInputChange = (setValue, value, name, type, length) => {
     let data = value;
     if (type === "numberField") {
@@ -67,7 +67,7 @@ const ContactUS = (props) => {
       return setValue(name, value.target.value.trimLeft());
     }
   };
-
+ 
   const validationSchema = Yup.object({
     phoneNumber: Yup.string()
       .required("Please enter phone number.")
@@ -84,7 +84,7 @@ const ContactUS = (props) => {
       .required("Please enter email address."),
     message: Yup.string().required("Please enter message."),
   });
-
+ 
   const handleFormSubmit = (values, { setSubmitting }) => {
     console.log("this is", values);
     if (!navigator.onLine) {
@@ -100,7 +100,7 @@ const ContactUS = (props) => {
     // console.log('on Submit hit ------', values);
     // isInternetConnected() && dispatch(LoginAction(values, history))
   };
-
+ 
   const successPopup = (
     <div className="wrapper_register">
       <div class="card">
@@ -127,7 +127,7 @@ const ContactUS = (props) => {
       </div>
     </div>
   );
-
+ 
   return (
     <div>
       <MobileSidebar isVisible={drawerState} handlewClick={handlewClick} />
@@ -145,24 +145,25 @@ const ContactUS = (props) => {
                 {/* {appConstants.contactfirst}{" "}
                 <span className="color-d">{appConstants.contactsecond}</span> */}
               </h2>
-             <p>Want to know more about what we’re doing here at The Passenger Hub or
-have a ticket-related question that isn’t answered on our website? We’d
-love to hear your questions, comments or feedback - just fill in the form
-below and we’ll get back to you shortly</p>
-             
+              <p>
+                Want to know more about what we’re doing here at The Passenger
+                Hub or have a ticket-related question that isn’t answered on our
+                website? We’d love to hear your questions, comments or feedback
+                - just fill in the form below and we’ll get back to you shortly
+              </p>
             </div>
           </div>
-          
-         
-
+ 
           <div className="row">
             <div className="col-sm-6 container small-xs-container">
-            <img src={images.contact} style={{ padding: '20px', width : "100%" }} />
-
+              <img
+                src={images.contact}
+                style={{ paddingLeft: "200px", width: "700px" }}
+              />
             </div>
-            
+ 
             <div className="col-sm-6  container small-xs-container ">
-            <Formik
+              <Formik
                 enableReinitialize
                 initialValues={initialState}
                 validationSchema={validationSchema}
@@ -180,14 +181,172 @@ below and we’ll get back to you shortly</p>
                 }) => (
                   <form onSubmit={handleSubmit}>
                     <div className="text-input-filed">
-                    <div className="form-group">
-                      <div className="row">
-                      <div className="col-sm-6">
-                        <label>First Name</label>
+                      <div className="form-group">
+                        <div className="row">
+                          <div className="col-sm-6">
+                            <label>
+                              <small>
+                                <b>First Name</b>
+                              </small>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="First Name"
+                              Value={values.first_name}
+                              name="first_name"
+                              onKeyDown={(e) => {
+                                if (e.key === " ") {
+                                  e.preventDefault();
+                                }
+                              }}
+                              onSelect={(e) => {
+                                if (e.target.value === "") {
+                                  handleInputChange(
+                                    setFieldValue,
+                                    e,
+                                    "first_name"
+                                  );
+                                }
+                              }}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  setFieldValue,
+                                  e,
+                                  "first_name"
+                                )
+                              }
+                            />
+                            {errors.first_name ? (
+                              <div className="color-error">
+                                {errors.first_name}
+                              </div>
+                            ) : null}
+                          </div>
+                          <div className="col-sm-6">
+                            <label>
+                              <small>
+                                <b>Last Name</b>
+                              </small>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Last Name"
+                              Value={values.last_name}
+                              name="last_name"
+                              onKeyDown={(e) => {
+                                if (e.key === " ") {
+                                  e.preventDefault();
+                                }
+                              }}
+                              onSelect={(e) => {
+                                if (e.target.value === "") {
+                                  handleInputChange(
+                                    setFieldValue,
+                                    e,
+                                    "last_name"
+                                  );
+                                }
+                              }}
+                              onChange={(e) =>
+                                handleInputChange(setFieldValue, e, "last_name")
+                              }
+                            />
+                            {errors.last_name ? (
+                              <div className="color-error">
+                                {errors.last_name}
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="row">
+                          <div className="col-sm-6">
+                            <label>
+                              <small>
+                                <b>Company</b>
+                              </small>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Company"
+                              Value={values.company}
+                              name="email"
+                              onKeyDown={(e) => {
+                                if (e.key === " ") {
+                                  e.preventDefault();
+                                }
+                              }}
+                              onSelect={(e) => {
+                                if (e.target.value === "") {
+                                  handleInputChange(
+                                    setFieldValue,
+                                    e,
+                                    "company"
+                                  );
+                                }
+                              }}
+                              onChange={(e) =>
+                                handleInputChange(setFieldValue, e, "company")
+                              }
+                            />
+                            {errors.company ? (
+                              <div className="color-error">
+                                {errors.company}
+                              </div>
+                            ) : null}
+                          </div>
+                          <div className="col-sm-6">
+                            <label>
+                              <small>
+                                <b>Job Title</b>
+                              </small>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Job Title"
+                              Value={values.job_title}
+                              name="job_title"
+                              onKeyDown={(e) => {
+                                if (e.key === " ") {
+                                  e.preventDefault();
+                                }
+                              }}
+                              onSelect={(e) => {
+                                if (e.target.value === "") {
+                                  handleInputChange(
+                                    setFieldValue,
+                                    e,
+                                    "job_title"
+                                  );
+                                }
+                              }}
+                              onChange={(e) =>
+                                handleInputChange(setFieldValue, e, "job_title")
+                              }
+                            />
+                            {errors.job_title ? (
+                              <div className="color-error">
+                                {errors.job_title}
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <label>
+                          <small>
+                            <b>Company Email</b>
+                          </small>
+                        </label>
                         <input
                           type="text"
                           className="form-control"
-                          placeholder="First Name"
+                          placeholder="Company Email"
                           Value={values.email}
                           name="email"
                           onKeyDown={(e) => {
@@ -208,115 +367,194 @@ below and we’ll get back to you shortly</p>
                           <div className="color-error">{errors.email}</div>
                         ) : null}
                       </div>
-                      <div className="col-sm-6">
-                        <label>Last Name</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Last Name"
-                          Value={values.email}
-                          name="email"
-                          onKeyDown={(e) => {
-                            if (e.key === " ") {
-                              e.preventDefault();
-                            }
-                          }}
-                          onSelect={(e) => {
-                            if (e.target.value === "") {
-                              handleInputChange(setFieldValue, e, "email");
-                            }
-                          }}
-                          onChange={(e) =>
-                            handleInputChange(setFieldValue, e, "email")
-                          }
-                        />
-                        {errors.email ? (
-                          <div className="color-error">{errors.email}</div>
-                        ) : null}
-                      </div></div>
+                      <div className="form-group">
+                        <div className="row">
+                          <div className="col-sm-6">
+                            <label>
+                              <small>
+                                <b>Country Code</b>
+                              </small>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Country Code"
+                              Value={values.country_code}
+                              name="email"
+                              onKeyDown={(e) => {
+                                if (e.key === " ") {
+                                  e.preventDefault();
+                                }
+                              }}
+                              onSelect={(e) => {
+                                if (e.target.value === "") {
+                                  handleInputChange(
+                                    setFieldValue,
+                                    e,
+                                    "country_code"
+                                  );
+                                }
+                              }}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  setFieldValue,
+                                  e,
+                                  "country_code"
+                                )
+                              }
+                            />
+                            {errors.country_code ? (
+                              <div className="color-error">
+                                {errors.country_code}
+                              </div>
+                            ) : null}
+                          </div>
+                          <div className="col-sm-6">
+                            <label>
+                              <small>
+                                <b>Mobile</b>
+                              </small>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Mobile"
+                              Value={values.mobile}
+                              name="mobile"
+                              onKeyDown={(e) => {
+                                if (e.key === " ") {
+                                  e.preventDefault();
+                                }
+                              }}
+                              onSelect={(e) => {
+                                if (e.target.value === "") {
+                                  handleInputChange(setFieldValue, e, "mobile");
+                                }
+                              }}
+                              onChange={(e) =>
+                                handleInputChange(setFieldValue, e, "mobile")
+                              }
+                            />
+                            {errors.mobile ? (
+                              <div className="color-error">{errors.mobile}</div>
+                            ) : null}
+                          </div>
+                        </div>
                       </div>
-                      <div className="form-group phone_number">
-                        <label>{appConstants.phonenumber}</label>
-                        <input
-                          type="number"
-                          className="form-control"
-                          placeholder={appConstants.phonenumber}
-                          Value={values.phoneNumber}
-                          name="phoneNumber"
-                          onKeyDown={(e) => {
-                            if (
-                              (e.key === " " && e.target.value.length < 1) ||
-                              e.key === "+" ||
-                              e.key === "-" ||
-                              e.key === "."
-                            ) {
-                              e.preventDefault();
-                            }
-                          }}
+ 
+                      <div className="form-group contact-are_you_q">
+                        <label>
+                          <small>
+                            <b>Are you a...?</b>
+                          </small>
+                        </label>
+                        <Select
+                          className="form-control station_search"
+                          showSearch
+                          name="are_you"
+                          value={values.are_you ? values.are_you : null}
+                          onChange={(e, v) => setValue("are_you", v.data)}
+                        >
+                          <Option value="Brand">Brand</Option>
+                          <Option value="Agency">Agency</Option>
+                          <Option value="Influencer">Influencer</Option>
+                          <Option value="Journalist">Journalist</Option>
+                          <Option value="Other">Other</Option>
+                        </Select>
+                        {errors.are_you ? (
+                          <div className="color-error">{errors.are_you}</div>
+                        ) : null}
+                      </div>
+ 
+                      <div className="form-group mt-4">
+                        <label>
+                          <small>
+                            <b>Which of our services are you interested in?</b>
+                          </small>
+                        </label>
+                        <div className="contact-label-wrap">
+                          <div className="d-flex align-items-center">
+                            <input
+                              type="checkbox"
+                              name="service"
+                              value="Influencer Marketing"
+                              id="im"
+                              style={{ height: "20px" }}
+                            />
+                            &nbsp;&nbsp;
+                            <label htmlFor="im">Influencer Marketing</label>
+                          </div>
+                          <div className="d-flex align-items-center">
+                            <input
+                              type="checkbox"
+                              name="service"
+                              value="Content Creation"
+                              id="cc"
+                              style={{ height: "20px" }}
+                            />
+                            &nbsp;&nbsp;
+                            <label htmlFor="cc">Content Creation</label>
+                          </div>
+                          <div className="d-flex align-items-center">
+                            <input
+                              type="checkbox"
+                              name="service"
+                              value="Social Media Account Growth"
+                              id="smag"
+                              style={{ height: "20px" }}
+                            />
+                            &nbsp;&nbsp;
+                            <label htmlFor="smag">
+                              Social Media Account Growth
+                            </label>
+                          </div>
+                          <div className="d-flex align-items-center">
+                            <input
+                              type="checkbox"
+                              name="service"
+                              value="General Enquiry: Would just like to know more!"
+                              id="gewjltkm"
+                              style={{ height: "20px" }}
+                            />
+                            &nbsp;&nbsp;
+                            <label htmlFor="gewjltkm">
+                              General Enquiry: Would just like to know
+                            </label>
+                            more!
+                          </div>
+                          <div className="d-flex align-items-center">
+                            <input
+                              type="checkbox"
+                              name="service"
+                              value="Press Enquiry"
+                              id="pe"
+                              style={{ height: "20px" }}
+                            />
+                            &nbsp;&nbsp;
+                            <label htmlFor="pe">Press Enquiry</label>
+                          </div>
+                        </div>
+                      </div>
+ 
+                      <div className="form-group">
+                        <label>
+                          <small>
+                            <b>How can we help?</b>
+                          </small>
+                        </label>
+                        <textarea
+                          className="form-control lef-contact"
+                          placeholder={appConstants.how_can_help}
+                          name="how_can_help"
+                          rows="3"
+                          Value={values.how_can_help}
                           onSelect={(e) => {
                             if (e.target.value === "") {
                               handleInputChange(
                                 setFieldValue,
                                 e,
-                                "phoneNumber",
-                                "numberField",
-                                15
+                                "how_can_help"
                               );
-                            }
-                          }}
-                          onChange={(e) => {
-                            handleInputChange(
-                              setFieldValue,
-                              e,
-                              "phoneNumber",
-                              "numberField",
-                              15
-                            );
-                          }}
-                        />
-                        {touched.phoneNumber && errors.phoneNumber ? (
-                          <div className="color-error">
-                            {errors.phoneNumber}
-                          </div>
-                        ) : null}
-                        <span className="text_phone">+44</span>
-                      </div>
-                      <div className="form-group">
-                        <label>{appConstants.EmailAddress}</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder={appConstants.EmailAddress}
-                          Value={values.email}
-                          name="email"
-                          onKeyDown={(e) => {
-                            if (e.key === " ") {
-                              e.preventDefault();
-                            }
-                          }}
-                          onSelect={(e) => {
-                            if (e.target.value === "") {
-                              handleInputChange(setFieldValue, e, "email");
-                            }
-                          }}
-                          onChange={(e) =>
-                            handleInputChange(setFieldValue, e, "email")
-                          }
-                        />
-                        {errors.email ? (
-                          <div className="color-error">{errors.email}</div>
-                        ) : null}
-                      </div>
-                      <div className="form-group">
-                        <label>{appConstants.message}</label>
-                        <textarea
-                          className="form-control lef-contact"
-                          placeholder={appConstants.message}
-                          name="message"
-                          Value={values.message.trimLeft()}
-                          onSelect={(e) => {
-                            if (e.target.value === "") {
-                              handleInputChange(setFieldValue, e, "message");
                             }
                           }}
                           onKeyDown={(e) => {
@@ -325,11 +563,13 @@ below and we’ll get back to you shortly</p>
                             }
                           }}
                           onChange={(e) =>
-                            handleInputChange(setFieldValue, e, "message")
+                            handleInputChange(setFieldValue, e, "how_can_help")
                           }
                         ></textarea>
-                        {touched.message && errors.message ? (
-                          <div className="color-error">{errors.message}</div>
+                        {touched.how_can_help && errors.how_can_help ? (
+                          <div className="color-error">
+                            {errors.how_can_help}
+                          </div>
                         ) : null}
                       </div>
                       <div className="button_bottom text-center">
@@ -338,11 +578,7 @@ below and we’ll get back to you shortly</p>
                           type="submit"
                           disabled={contactUsFormLoader}
                         >
-                          {!contactUsFormLoader ? (
-                            appConstants.submit
-                          ) : (
-                            <Spin />
-                          )}
+                          {!contactUsFormLoader ? "SEND" : <Spin />}
                         </button>
                       </div>
                     </div>
@@ -350,15 +586,16 @@ below and we’ll get back to you shortly</p>
                 )}
               </Formik>
             </div>
-
           </div>
         </>
       ) : (
         successPopup
       )}
-
+ 
       <FooterMain />
     </div>
   );
 };
 export default ContactUS;
+ 
+

@@ -103,9 +103,9 @@ const Careers = (props) => {
               <h2>{appConstants.financelist}</h2>
               <h2>{appConstants.financelisttwo}</h2>
               <h2>{appConstants.financelistthree}</h2>
-              <button className="button text tet-ios_one">
+              {/* <button className="button text tet-ios_one">
                 {appConstants.letstarted}
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -115,10 +115,11 @@ const Careers = (props) => {
 
       <div className="culture">
         <div className="container">
-          <h2 className="line">
-            Our<span className="color-d"> Culture</span>
-          </h2>
-
+          <h3 className="line" style={{textAlign : "center" , fontWeight: "700"}}>
+            
+            We are building a company that is .....
+          </h3>
+          <br/>
           {/* <div className="text-line" style={{ marginBottom: '0px' }}>
                         <img src={images.border1} style={{ width: '400px' }} />
                     </div> */}

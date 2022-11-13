@@ -118,7 +118,7 @@ const Finance = (props) => {
                 <img src={images.first_f} />
               </div>
               <div className="fiannce_img">
-                <img src={images.second_f} className="img-line-f " />
+                <img src={images.finance1} className="img-line-f " />
               </div>
             </div>
             <div className="col-md-6">
@@ -258,6 +258,42 @@ const Finance = (props) => {
             Financing is arranged by The Passenger Hub and provided by Funding
             Falcon. It will appear as Funding Falcon on your bank statement
           </p>
+        </div>
+      </div>
+      <div className="about-text texto">
+        <div className="container-fluid">
+          <div className="row">
+            <div
+              className="col-md-2"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+           
+            </div>
+            <div className="col-md-8">
+              <h2 style={{textAlign: "center"}}><b>Here's How much could you could save</b></h2>
+            <div className="fiannce_img" style={{width: "1000px"}}>
+                <img src={images.price}  />
+              </div> 
+            </div>
+
+            <div
+              className="col-md-2"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+             
+            </div>
+          </div>
+       
         </div>
       </div>
       <div className="about-text texto">

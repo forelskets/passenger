@@ -168,7 +168,6 @@ span.button {
   height: 551px;
 }
 
-
 .line-text-d img:first-child {
   margin-bottom: 32px;
 }
@@ -549,12 +548,32 @@ p.text-about {
   margin: auto;
   margin-bottom: 16px;
   position: relative;
+  overflow: hidden;
+}
+
+.team-img:hover .edit-img {
+  display: grid;
+}
+
+.team-img .edit-img {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  place-items: center;
+  color: #fff;
+  font-size: 28px;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .team-img img {
-  width: 160px;
-  height: 160px;
-  padding: 6px;
+  width: 154px;
+  height: 154px;
+  margin: 3px;
+  border-radius: 100%;
 }
 
 .team-text h3 {
@@ -964,6 +983,13 @@ textarea.form-control::placeholder {
 /* .button_bottom button.button.text {
     max-width: 100%!important;
 } */
+.contact-label-wrap label {
+  cursor: pointer;
+  color: #1b2636;
+  font-size: unset;
+  font-weight: unset;
+  margin: 0;
+}
 .button_bottom {
   margin-top: 41px;
 }
@@ -1017,6 +1043,21 @@ textarea.form-control {
   color: #b5b5b5;
   border-color: #e7f0f1 !important;
   box-shadow: none !important;
+}
+.contact-are_you_q .ant-select-selector {
+  background: #ffffff;
+  border: 2px solid #e7f0f1 !important;
+  padding: 6px 11px !important;
+  border-radius: 12px !important;
+  height: 50px !important;
+  font-size: 18px;
+  font-weight: 600;
+  color: #b5b5b5;
+  border-color: #e7f0f1 !important;
+  box-shadow: none !important;
+}
+.contact-are_you_q .ant-select-selector input {
+  cursor: pointer !important;
 }
 .first.d-flex.standard_class {
   background-color: #dedede;
@@ -2378,12 +2419,12 @@ span.button.same {
   text-align: center;
 }
 span.button.same1 {
-  width: 300px ;
+  width: 300px;
   display: inline-block;
   text-align: center;
   font-weight: 900;
   padding: 21px;
-  height: "60px",
+  height: "60px";
 }
 input[type="text"] {
   caret-color: #000;
@@ -2683,12 +2724,12 @@ input,
 }
 .box_small_n .top_cers_new .first-div-item label {
   width: 224px;
-  min-width: 224px;
+  min-width: 240px;
   max-width: 224px;
 }
 .box_small_n .first-div-item {
   border-bottom: 1px solid #f0f0f0;
-  padding: 15px 15px;
+  padding: 15px 150px;
   margin-bottom: 0;
 }
 .number-input input {

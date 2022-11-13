@@ -4,8 +4,8 @@ const images = {
     plus: require('../images/plus_five.png').default,
     user12: require('../images/user.png').default,
     logohome: require('../images/logoone.png').default,
-    oyster: require('../images/oyster1.png').default,
-    travel: require('../images/travel1.jpg').default,
+    oyster: require('../images/oyster11.png').default,
+    travel: require('../images/travel11.png').default,
     // oyster: require('../images/oyster.gif').default,
     // travel: require('../images/travel.gif').default,
     shopping: require('../images/shopping.jpg').default,
@@ -79,6 +79,9 @@ const images = {
     about1: require('../images/about.jpeg').default,
     about2: require('../images/about1.jpeg').default,
     contact: require('../images/contact.jpeg').default,
+    price: require('../images/chart.jpg').default,
+    finance1: require('../images/finance1.png').default,
+    
 
 
 

@@ -4,7 +4,8 @@ import images from "../../themes/appImage";
 import { useDispatch, useSelector } from "react-redux";
 import {
   useNavigate,
-  useLocation
+  useLocation,
+  Link
 } from "react-router-dom";
 import { getMemoizedAuthenticationData } from "../../redux/selectors/authentication";
 import { drawerAction } from "../../redux/actions/authentication"
@@ -95,76 +96,47 @@ const Landing = (props) => {
       <HeaderMain handleClick={handlewClick} />
       <div className="banner-section">
         <div className="container-fluid">
-        <h2 className="line">
-            Train travel made 
-            <span className="color-d"> cheaper</span> 
-          
+          <h2 className="line">
+            Train travel made
+            <span className="color-d"> cheaper</span>
           </h2>
           <div className="row">
-            
             <div className="col-md-6">
-              {/* <div className="line-text-d">
-               
-                <img
-                  alt=""
-                  src={images.oyster}
-                  onClick={() => navigate('/purchaseoyster', { state: { key: "landingPage" } })}
-                  style={{ width: '250px', cursor: 'pointer' }}
-                />
-                <img
-                  alt=""
-                  src={images.travel}
-                  onClick={() => (navigate('/newBookings'))}
-                  style={{ width: '250px', cursor: 'pointer' }}
-                />
-              </div> */}
-              <h4 style={{paddingLeft: "150px" , paddingTop: "40px"}}>It’s time to stop overpaying for 
-your commute.</h4>
-<h4 style={{paddingLeft: "150px" , paddingTop: "40px"}}>Split the cost of your train ticket over 12 months, and <span className="color-d">save up to 20%</span></h4>
-            </div>
-            <div className="col-md-6">
-              <div className="banner_text">
-                <img
-                  alt=""
-                  src={imageBanner}
-                  className={imageBannerClass}
-                  style={{ width: '550px',paddingRight:"40px" }}
-                />
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        
-      </div>
-      <div className="home-banner-section1">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-3"></div>
-            <div className="col-md-3">
-              <div className="line-text-d">
-                {/* onClick={()=>(navigate('/purchaseOystersearch'))} */}
-                <img
-                  alt=""
-                  src={images.oyster}
-                  onClick={() =>
-                    navigate("/purchaseoyster", {
-                      state: { key: "landingPage" },
-                    })
-                  }
-                  style={{ width: "250px", cursor: "pointer" }}
-                />
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="line-text-d">
-                <img
-                  alt=""
-                  src={images.travel}
-                  onClick={() => navigate("/newBookings")}
-                  style={{ width: "250px", cursor: "pointer" }}
-                />
-                {/* <div className="banner_text">
+             
+              <h4 style={{ paddingLeft: "100px", paddingTop: "40px" }}>
+                It’s time to stop overpaying for your commute.
+              </h4>
+              <h4 style={{ paddingLeft: "100px", paddingTop: "20px" }}>
+                Split the cost of your train ticket over 12 months, and{" "}
+                <span className="color-d">save up to 20%</span>
+              </h4>
+              <div className="home-banner-section1">
+                <div className="container-fluid">
+                  <div className="d-flex pt-4 " style={{paddingLeft: "90px"}}>
+                    <div className="mr-5">
+                      <div className="line-text-d">
+                        {/* onClick={()=>(navigate('/purchaseOystersearch'))} */}
+                        <img
+                          alt=""
+                          src={images.oyster}
+                          onClick={() =>
+                            navigate("/purchaseoyster", {
+                              state: { key: "landingPage" },
+                            })
+                          }
+                          style={{ width: "250px", cursor: "pointer" }}
+                        />
+                      </div>
+                    </div>
+                    <div className="">
+                      <div className="line-text-d">
+                        <img
+                          alt=""
+                          src={images.travel}
+                          onClick={() => navigate("/newBookings")}
+                          style={{ width: "250px", cursor: "pointer" }}
+                        />
+                        {/* <div className="banner_text">
                 <img
                   alt=""
                   src={imageBanner}
@@ -172,9 +144,22 @@ your commute.</h4>
                   style={{ width: "700px" }}
                 />
               </div> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-md-3"></div>
+            <div className="col-md-6">
+              <div className="banner_text">
+                <img
+                  alt=""
+                  src={imageBanner}
+                  className={imageBannerClass}
+                  style={{ width: "550px", paddingRight: "40px" }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -316,7 +301,18 @@ kept up-to-date on the launch.</p>
           Or if you’re self-employed, get a cheaper season ticket alongside a monthly receipt for your expenses.
 
           </div>
-                
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              
+            }}
+          >
+            <Link to="/contactUs">
+             <span className="button same1">Contact Us</span>
+             </Link>
+          </div>
             </div>
             <div className="col-md-6 special_padding">
               {

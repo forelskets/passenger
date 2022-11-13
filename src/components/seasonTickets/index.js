@@ -16,7 +16,7 @@ import MobileSidebar from "../../common/mobilesidebar";
 import HeaderMain from "../../common/header";
 import Footer from "../../common/footer";
 import FooterMain from "../../common/footer";
-
+ 
 import { getMemoizedAuthenticationData } from "../../redux/selectors/authentication";
 import { getMemoizedNewBookingsData } from "../../redux/selectors/newBookings";
 import { getMemoizedSeasonTicketsData } from "../../redux/selectors/seasonTickets";
@@ -37,17 +37,17 @@ import {
 } from "../../common/utils";
 import CheckoutForm from "../../common/stripe";
 import { removeCardDetailsInitiate } from "../../redux/actions/card";
-
+ 
 const { Option } = Select;
-
+ 
 const secret_key =
   "pk_test_51Jhv2sGfOTJnV5SoIwp0EZ3zXD2CxvH6NkafIGo172OYUHjpO75PrfZjZJfUe5yyRVlhJnNGasKl9DnBwnJK3YTB00UrPHUgt6";
 const stripe = loadStripe(secret_key);
-
+ 
 const SeasonTickets = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+ 
   const initialState = {
     source: null,
     destination: null,
@@ -56,7 +56,7 @@ const SeasonTickets = (props) => {
     duration: "",
     leave: "",
   };
-
+ 
   const authenticationData = useSelector(getMemoizedAuthenticationData);
   const { drawerState } = authenticationData;
   const newBookingsData = useSelector(getMemoizedNewBookingsData);
@@ -79,7 +79,7 @@ const SeasonTickets = (props) => {
   const cardData = useSelector(getMemoizedcardData);
   const { removeCardDetailsLoader, removeCardDetailsSuccess, addCardSuccess } =
     cardData;
-
+ 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isPaymentModalVisible, setIsPaymentModalVisible] = useState(false);
   const [openDatePicker, setOpenDatePicker] = useState(false);
@@ -92,31 +92,31 @@ const SeasonTickets = (props) => {
     useState(false);
   const [isCancelTicketModalVisible, setIsCancelTicketModalVisible] =
     useState(false);
-
+ 
   useLayoutEffect(() => {
     dispatch(getStationsListInitiate({}, navigate));
     dispatch(getSeasonTktDetailInitiate({}, navigate));
   }, []);
-
+ 
   useLayoutEffect(() => {
     if (requestSeasonTktSuccess) {
       setIsModalVisible(true);
     }
   }, [requestSeasonTktSuccess]);
-
+ 
   useLayoutEffect(() => {
     if (seasonTktPaymentSuccess) {
       handlePaymentModalClose();
       handleModalClose();
     }
   }, [seasonTktPaymentSuccess]);
-
+ 
   useLayoutEffect(() => {
     if (addCardSuccess) {
       setAddNewCard(false);
     }
   }, [addCardSuccess]);
-
+ 
   // useLayoutEffect(() => {
   //   if (seasonTktPaymentTypeUpdateSuccess && requestSeasonTktSuccess) {
   //     setIsModalVisible(false)
@@ -124,19 +124,19 @@ const SeasonTickets = (props) => {
   //     dispatch(updateSeasonTktState(false, 'requestSeasonTktSuccess'))
   //   }
   // }, [seasonTktPaymentTypeUpdateSuccess])
-
+ 
   useLayoutEffect(() => {
     if (removeCardDetailsSuccess) {
       handleRemoveCardModalClose();
     }
   }, [removeCardDetailsSuccess]);
-
+ 
   const onRadioChange = (setValue, e, name) => {
     // console.log('radio checked', e.target.value);
     setValue(name, e.target.value);
     // setValue(e.target.value);
   };
-
+ 
   const handlewClick = () => {
     let action = drawerState ? false : true;
     dispatch(drawerAction(action, "drawerState"));
@@ -146,7 +146,7 @@ const SeasonTickets = (props) => {
     window.scrollTo(0, 0);
   }, []);
   const dateFormat = "DD/MM/YYYY";
-
+ 
   const validationSchema = Yup.object({
     source: Yup.object().nullable().required("Please select source."),
     destination: Yup.object().nullable().required("Please select destination."),
@@ -155,18 +155,18 @@ const SeasonTickets = (props) => {
     duration: Yup.string().required("Please select duration."),
     leave: Yup.string().required("Please select leave."),
   });
-
+ 
   const handleSelectChange = (setValue, value, name, type) => {
     return setValue(name, value);
   };
-
+ 
   const cancelTicket = () => {
     setIsCancelTicketModalVisible(false);
     dispatch(
       cancelSeasonTicketInitiate({ ticketId: seasonTktDetail.ticketId })
     );
   };
-
+ 
   const handleFormSubmit = (values, { setSubmitting }) => {
     console.log("this is = ", values);
     if (!navigator.onLine) {
@@ -196,21 +196,21 @@ const SeasonTickets = (props) => {
     setIsPaymentModalVisible(false);
     dispatch(updateSeasonTktState(false, "requestSeasonTktSuccess"));
   };
-
+ 
   const handlePaymentModalClose = () => {
     setIsPaymentModalVisible(false);
     setAddNewCard(false);
     // dispatch(updateSeasonTktState(false, 'requestSeasonTktSuccess'))
   };
-
+ 
   const handleRemoveCardModalClose = () => {
     setIsRemoveCardModalVisible(false);
   };
-
+ 
   const handleCancelTicketModalClose = () => {
     setIsCancelTicketModalVisible(false);
   };
-
+ 
   const cancelTicketModel = () => {
     return (
       <Modal
@@ -248,7 +248,7 @@ const SeasonTickets = (props) => {
       </Modal>
     );
   };
-
+ 
   const _modalView = () => {
     return (
       <Modal
@@ -325,7 +325,7 @@ const SeasonTickets = (props) => {
       </Modal>
     );
   };
-
+ 
   const removeCard = () => {
     return (
       <Modal
@@ -370,7 +370,7 @@ const SeasonTickets = (props) => {
       </Modal>
     );
   };
-
+ 
   const paymentModal = () => {
     return (
       <Modal
@@ -418,7 +418,7 @@ const SeasonTickets = (props) => {
                       <p className="booker">Payment Methods</p>
                     </div>
                   </div>
-
+ 
                   <div className="first d-flex cards_text ">
                     {!requestSeasonTktDetails?.card?.cardNumber ? (
                       <div
@@ -456,7 +456,7 @@ const SeasonTickets = (props) => {
                     )}
                   </div>
                 </div>
-
+ 
                 {
                   <div className="text_wrapper_w payments ship_season_tickets">
                     <div className="text_top d-flex">
@@ -475,7 +475,7 @@ const SeasonTickets = (props) => {
                         <p>{requestSeasonTktDetails?.destination || "N/A"}</p>
                       </div>
                     </div>
-
+ 
                     <div className="first d-flex shipping_line_one">
                       <div className="d-flex">
                         <img alt="" src={images.wpf_name1} />
@@ -542,7 +542,7 @@ const SeasonTickets = (props) => {
       </Modal>
     );
   };
-
+ 
   return (
     <div>
       <MobileSidebar isVisible={drawerState} handlewClick={handlewClick} />
@@ -568,109 +568,117 @@ const SeasonTickets = (props) => {
                 style={{ width: '400px' }}
               />
             </div> */}
-
-            {!isObjEmpty(seasonTktDetail) ? (
-              <div className="container-text-l train_div carddetails box_small_n">
-                <div class="text_top d-flex">
-                  <div class="d-flex align-center bookert">
-                    <p class="booker">Season Ticket Details</p>
+ 
+            {
+              !isObjEmpty(seasonTktDetail) ? (
+                <div className="container-text-l train_div carddetails box_small_n">
+                  <div class="text_top d-flex" style={{paddingLeft: "225px"}}>
+                    <div class="d-flex align-center bookert">
+                      <p class="booker" >Season Ticket Details</p>
+                    </div>
                   </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-12">
-                    <div className="text-input-filed top_cers_new">
-                      <div className="first-div-item">
-                        <label>
-                          Ticket ID
-                          <span style={{ visibility: "hidden" }}>i1</span>
-                        </label>
-                        <div className="text">
-                          <p>{seasonTktDetail?.ticketId || "N/A"}</p>
+                  <div className="row">
+                    <div className="col-md-12">
+                      <div className="text-input-filed top_cers_new">
+                        <div className="first-div-item">
+                          <label>
+                            Ticket ID
+                            <span style={{ visibility: "hidden" }}>i1</span>
+                          </label>
+                          <div className="text">
+                            <p>{seasonTktDetail?.ticketId || "N/A"}</p>
+                          </div>
+                        </div>
+                        <div className="first-div-item">
+                          <label>User Type</label>
+                          <div className="text">
+                            <p>
+                              {FirstLetterUpperCase(
+                                seasonTktDetail?.passengerType
+                              ) || "N/A"}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="first-div-item">
+                          <label>Source</label>
+                          <div className="text">
+                            <p className="processing_div">
+                              {seasonTktDetail?.source || "N/A"}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="first-div-item">
+                          <label>Destination</label>
+                          <div className="text">
+                            <p className="processing_div">
+                              {seasonTktDetail?.destination || "N/A"}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                      <div className="first-div-item">
-                        <label>User Type</label>
-                        <div className="text">
-                          <p>
-                            {FirstLetterUpperCase(
-                              seasonTktDetail?.passengerType
-                            ) || "N/A"}
-                          </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-md-12">
+                      <div className="text-input-filed top_cers_new">
+                        <div className="first-div-item">
+                          <label>Start Date</label>
+                          <div className="text">
+                            <p>
+                              {(seasonTktDetail?.startDate &&
+                                moment(seasonTktDetail?.startDate).format(
+                                  "DD/MM/YYYY"
+                                )) ||
+                                "N/A"}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="first-div-item">
-                        <label>Source</label>
-                        <div className="text">
-                          <p className="processing_div">
-                            {seasonTktDetail?.source || "N/A"}
-                          </p>
+                        <div className="first-div-item">
+                          <label>Expiry Date</label>
+                          <div className="text">
+                            <p>
+                              {(seasonTktDetail?.validUpto &&
+                                moment(seasonTktDetail?.validUpto).format(
+                                  "DD/MM/YYYY"
+                                )) ||
+                                "N/A"}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="first-div-item">
-                        <label>Destination</label>
-                        <div className="text">
-                          <p className="processing_div">
-                            {seasonTktDetail?.destination || "N/A"}
-                          </p>
+                        <div className="first-div-item">
+                          <label>Status</label>
+                          <div className="text">
+                            <p className="processing_div">
+                              {(seasonTktDetail?.isApproved && `Approved`) ||
+                                (seasonTktDetail?.isPending &&
+                                  `Under Processing`) ||
+                                (seasonTktDetail?.isRejected && `Rejected`)}
+                            </p>
+                          </div>
+                        </div>
+                        <div style={{marginLeft: "250px" , padding: "15px 0px"}}>
+                          
+                          <div className="text" style={{ width: "300px"  }}>
+                            <button
+                              class="button text w-100 justify-content-center"
+                              onClick={() =>
+                                setIsCancelTicketModalVisible(true)
+                              }
+                            >
+                              Cancel Ticket
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-md-12">
-                    <div className="text-input-filed top_cers_new">
-                      <div className="first-div-item">
-                        <label>Start Date</label>
-                        <div className="text">
-                          <p>
-                            {(seasonTktDetail?.startDate &&
-                              moment(seasonTktDetail?.startDate).format(
-                                "DD/MM/YYYY"
-                              )) ||
-                              "N/A"}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="first-div-item">
-                        <label>Expiry Date</label>
-                        <div className="text">
-                          <p>
-                            {(seasonTktDetail?.validUpto &&
-                              moment(seasonTktDetail?.validUpto).format(
-                                "DD/MM/YYYY"
-                              )) ||
-                              "N/A"}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="first-div-item">
-                        <label>Status</label>
-                        <div className="text">
-                          <p className="processing_div">
-                            {(seasonTktDetail?.isApproved && `Approved`) ||
-                              (seasonTktDetail?.isPending &&
-                                `Under Processing`) ||
-                              (seasonTktDetail?.isRejected && `Rejected`)}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="first-div-item">
-                        <label></label>
-                        <div className="text" style={{ width: "300px" }}>
-                          <button
-                            class="button text w-100 justify-content-center"
-                            onClick={() => setIsCancelTicketModalVisible(true)}
-                          >
-                            Cancel Ticket
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              ) : (
+                <div style={{ textAlign: "center", padding: "50px" }}>
+                  No Tickets Available
                 </div>
-              </div>
-            ) : (
+              )
+              /* (
               <div className="container-text-l train_div carddetails">
                 <Formik
                   enableReinitialize
@@ -984,7 +992,8 @@ const SeasonTickets = (props) => {
                   )}
                 </Formik>
               </div>
-            )}
+            ) */
+            }
           </div>
         </div>
       </Spin>
@@ -995,5 +1004,7 @@ const SeasonTickets = (props) => {
     </div>
   );
 };
-
+ 
 export default SeasonTickets;
+ 
+

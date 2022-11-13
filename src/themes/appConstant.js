@@ -14,7 +14,7 @@ export const appConstants = {
   myProfile: "My Profile",
   purchaseOC: "Purchase Oyster Cards",
   addDebitCreditCard: "Add Debit/Credit Card",
-  requestSeasonTkt: "Request For Season Ticket",
+  requestSeasonTkt: "View Season Ticket",
   requestFlexiTkt: "Request For Flexi Ticket",
   changePassword: "Change Password",
   finance: "Finance",
